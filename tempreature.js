@@ -15,13 +15,17 @@ async function searchTemp() {
     const data = await response.json();
     displayTemp(data);
   } catch (error) {
-    console.log(error);
+    alert("This city name doesn't exist")
   }
+}
+
+const setElement =(id, value) =>{
+  document.getElementById(id).innerText = value;
 }
 
 const displayTemp = (data) => {
   console.log(data);
-  document.getElementById("city").innerText = data.name;
-  document.getElementById("temp").innerText = data.main.temp;
-  document.getElementById("condition").innerText = data.weather[0].main;
+  setElement('city', data.name)
+  setElement('temp', data.main.temp)
+  setElement('condition', data.weather[0].main)
 };
