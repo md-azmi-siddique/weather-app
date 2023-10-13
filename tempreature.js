@@ -17,6 +17,8 @@ async function searchTemp() {
   } catch (error) {
     alert("This city name doesn't exist")
   }
+
+  document.getElementById("city-name").value = "";
 }
 
 const setElement =(id, value) =>{
